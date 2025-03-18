@@ -1,24 +1,31 @@
 package com.example.construction.Model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Tache {
      private int id;
      private String nom;
      private Date dateDebut;
      private Date dateFin;
+     private String description;
 
-    public Tache(int id, String nom, Date dateDebut, Date dateFin) {
+    public Tache(int id, String nom, Date dateDebut, Date dateFin,String description) {
         this.id = id;
         this.nom = nom;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.description = description;
     }
 
-    public Tache(String nom, Date dateDebut, Date dateFin) {
+    public Tache(String nom, Date dateDebut, Date dateFin,String description) {
         this.nom = nom;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.description = description;
+    }
+
+    public Tache(int id) {
     }
 
     public int getId() {
@@ -51,5 +58,13 @@ public class Tache {
 
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
