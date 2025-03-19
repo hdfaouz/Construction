@@ -5,21 +5,21 @@ import java.sql.Date;
 
 public class Tache {
      private int id;
-     private String nom;
+     private String nomdutache;
      private Date dateDebut;
      private Date dateFin;
      private String description;
 
-    public Tache(int id, String nom, Date dateDebut, Date dateFin,String description) {
+    public Tache(int id, String nomdutache, Date dateDebut, Date dateFin,String description) {
         this.id = id;
-        this.nom = nom;
+        this.nomdutache= nomdutache;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.description = description;
     }
 
-    public Tache(String nom, Date dateDebut, Date dateFin,String description) {
-        this.nom = nom;
+    public Tache(String nomdutache, Date dateDebut, Date dateFin,String description) {
+        this.nomdutache = nomdutache;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.description = description;
@@ -36,12 +36,12 @@ public class Tache {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNomdutache() {
+        return nomdutache;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNomdutache(String nomdutache) {
+        this.nomdutache = nomdutache;
     }
 
     public Date getDateDebut() {

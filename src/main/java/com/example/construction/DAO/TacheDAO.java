@@ -16,7 +16,7 @@ public class TacheDAO {
     public void AjouterTache(Tache tache) throws SQLException {
         String sql = "INSERT INTO taches(nomdutache,datededebut,datedefin,description,ressourcenecessaire) VALUES (?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,tache.getNom());
+        preparedStatement.setString(1,tache.getNomdutache());
         preparedStatement.setDate(2, tache.getDateDebut());
         preparedStatement.setDate(3, tache.getDateFin());
         preparedStatement.setString(4,tache.getDescription());
@@ -27,7 +27,7 @@ public class TacheDAO {
     public void ModifierTache(Tache tache) throws SQLException {
         String sql ="UPDATE taches SET nomdutache=? ,datededebut=?,datedefin=?,description=? WHERE id=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,tache.getNom());
+        preparedStatement.setString(1,tache.getNomdutache());
         preparedStatement.setDate(2, tache.getDateDebut());
         preparedStatement.setDate(3, tache.getDateFin());
         preparedStatement.setInt(4,tache.getId());
