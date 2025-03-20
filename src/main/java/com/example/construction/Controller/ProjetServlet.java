@@ -70,29 +70,23 @@ public class ProjetServlet extends HttpServlet {
     private void afficherProjetById(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Projets projetsById = projetDAO.getProjetById(id);
-
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String formattedDateFin = dateFormat.format(projetsById.getDatedefin());
-
-
         request.setAttribute("projetsById", projetsById);
         request.setAttribute("formattedDateFin", formattedDateFin);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/View/Projet/modifier-projet.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/Projet/modifier-projet.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/View/Projet/ajouterProjet.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/Projet/ajouterProjet.jsp");
         dispatcher.forward(request, response);
     }
 
     private void afficherProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         List<Projets> listeProjets = projetDAO.afficherProjets();
-
         request.setAttribute("projets", listeProjets);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/View/Projet/afficher-projet.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/Projet/afficher-projet.jsp");
         dispatcher.forward(request, response);
     }
 

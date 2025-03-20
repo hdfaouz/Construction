@@ -19,6 +19,10 @@ public class Ressource {
         this.quantite = quantite;
     }
 
+    public Ressource() {
+
+    }
+
     public int getId() {
         return id;
     }

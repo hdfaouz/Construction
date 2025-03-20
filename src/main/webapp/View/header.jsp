@@ -1,0 +1,123 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar with Icons</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            width: 240px;
+            background-color: #000000; /* Black background */
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            top: 0;
+        }
+        .sidebar .navbar-brand {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .sidebar .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #f8f9fa; /* Light gray on hover */
+        }
+        .sidebar .nav-link i {
+            margin-right: 10px; /* Space between icon and text */
+            font-size: 1.2rem;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        /* Custom link color classes */
+        .custom-link-color-1 {
+            color: #ffcc00 !important; /* Yellow */
+        }
+        .custom-link-color-2 {
+            color: #ff6666 !important; /* Red */
+        }
+        .custom-link-color-3 {
+            color: #66cc66 !important; /* Green */
+        }
+    </style>
+</head>
+<!-- Sidebar -->
+<nav class="sidebar">
+    <a class="navbar-brand" href="#">XpertConstruction</a>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-home"></i> <!-- Home Icon -->
+                Accueil
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/projet?action=new">
+                <i class="fas fa-plus"></i> <!-- Add Icon -->
+                Ajouter Projet
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/projet?action=afficher">
+                <i class="fas fa-list"></i> <!-- List Icon -->
+                Liste des Projets
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ressource?action=new">
+                <i class="fas fa-tools"></i> <!-- Tools Icon -->
+                Ajouter Ressource
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ressource?action=afficher">
+                <i class="fas fa-th-list"></i> <!-- List Icon -->
+                Liste des Ressources
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-tasks"></i> <!-- Tasks Icon -->
+                Ajouter Tâche
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-eye"></i> <!-- Eye Icon -->
+                Afficher les Tâches
+            </a>
+        </li>
+    </ul>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function changeLinkColor(className) {
+        const links = document.querySelectorAll('.sidebar .nav-link');
+        links.forEach(link => {
+            link.classList.remove('custom-link-color-1', 'custom-link-color-2', 'custom-link-color-3');
+            link.classList.add(className);
+        });
+    }
+</script>

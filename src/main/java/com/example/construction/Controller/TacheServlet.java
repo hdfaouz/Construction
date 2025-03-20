@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,11 +75,28 @@ public class TacheServlet extends HttpServlet {
                                 throw new RuntimeException(e);
                             }
                             break;
-                            default:
+            case"afficherbyID":
+                try {
+                    afficherTachebyID(req,resp);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            default:
                                 resp.sendRedirect("/tache?action=afficher");
                                 break;
 
         }
+    }
+
+    private void afficherTachebyID(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        Tache tache =tacheDAO.getTacheById(id);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDateFin = dateFormat.format(tache.getDateFin());
+        req.setAttribute("tache",tache);
+        req.setAttribute("formattedDateFin", formattedDateFin);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/View/Tache/modifierTache.jsp");
+        dispatcher.forward(req, resp);
     }
 
     private void modifierTache(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException, IOException {
@@ -88,7 +106,7 @@ public class TacheServlet extends HttpServlet {
         Date dateFin = Date.valueOf(req.getParameter("datefin"));
         String description = req.getParameter("description");
         Tache tache = new Tache(id, nomdutache, dateDebut, dateFin, description);
-        tacheDAO.AfficherTache();
+        tacheDAO.ModifierTache(tache);
         resp.sendRedirect("tache?action=afficher");
     }
 
@@ -101,10 +119,10 @@ public class TacheServlet extends HttpServlet {
     private void afficherTache(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException {
         List<Tache> taches = tacheDAO.AfficherTache();
         req.setAttribute("taches", taches);
-        req.getRequestDispatcher("");
-
-
+        req.getRequestDispatcher("/WEB-INF/View/Tache/afficherTache.jsp");
     }
+
+
 
     private void ajouterTache(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         String nomdutache = req.getParameter("nomdutache");
