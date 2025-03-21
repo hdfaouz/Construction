@@ -10,7 +10,7 @@ public class Projets {
     private String description;
     private Double budget;
 
-    // Constructeur avec tous les attributs
+
     public Projets(int id, String nomduprojet, Date datededebut, Date datedefin, String description, Double budget) {
         this.id = id;
         this.nomduprojet = nomduprojet;
@@ -20,7 +20,7 @@ public class Projets {
         this.budget = budget;
     }
 
-    // Constructeur sans ID (par exemple pour la création)
+
     public Projets(String nomduprojet, Date datededebut, Date datedefin, String description, Double budget) {
         this.nomduprojet = nomduprojet;
         this.datededebut = datededebut;
@@ -33,11 +33,11 @@ public class Projets {
     }
 
 
-    // Constructeur par défaut
+
     public Projets() {
     }
 
-    // Getter et Setter pour ID
+
     public int getId() {
         return id;
     }
@@ -46,7 +46,7 @@ public class Projets {
         this.id = id;
     }
 
-    // Getter et Setter pour Nom du Projet
+
     public String getNomduprojet() {
         return nomduprojet;
     }
@@ -55,7 +55,7 @@ public class Projets {
         this.nomduprojet = nomduprojet;
     }
 
-    // Getter et Setter pour Date de Début
+
     public Date getDatededebut() {
         return datededebut;
     }
@@ -64,7 +64,7 @@ public class Projets {
         this.datededebut = datededebut;
     }
 
-    // Getter et Setter pour Date de Fin
+
     public Date getDatedefin() {
         return datedefin;
     }
@@ -73,7 +73,7 @@ public class Projets {
         this.datedefin = datedefin;
     }
 
-    // Getter et Setter pour la Description
+
     public String getDescription() {
         return description;
     }
@@ -82,7 +82,7 @@ public class Projets {
         this.description = description;
     }
 
-    // Getter et Setter pour le Budget
+
     public Double getBudget() {
         return budget;
     }

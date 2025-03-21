@@ -2,11 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Sidebar with Icons</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS for Icons -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+
     <style>
         body {
             display: flex;
@@ -15,7 +15,7 @@
         }
         .sidebar {
             width: 240px;
-            background-color: #000000; /* Black background */
+            background-color: #000000;
             color: #fff;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -41,71 +41,58 @@
         }
         .sidebar .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
-            color: #f8f9fa; /* Light gray on hover */
+            color: #f8f9fa;
         }
         .sidebar .nav-link i {
-            margin-right: 10px; /* Space between icon and text */
+            margin-right: 10px;
             font-size: 1.2rem;
         }
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-        /* Custom link color classes */
-        .custom-link-color-1 {
-            color: #ffcc00 !important; /* Yellow */
-        }
-        .custom-link-color-2 {
-            color: #ff6666 !important; /* Red */
-        }
-        .custom-link-color-3 {
-            color: #66cc66 !important; /* Green */
-        }
+
     </style>
 </head>
-<!-- Sidebar -->
+
 <nav class="sidebar">
     <a class="navbar-brand" href="#">XpertConstruction</a>
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-home"></i> <!-- Home Icon -->
+                <i class="fas fa-home"></i>
                 Accueil
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/projet?action=new">
-                <i class="fas fa-plus"></i> <!-- Add Icon -->
+                <i class="fas fa-plus"></i>
                 Ajouter Projet
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/projet?action=afficher">
-                <i class="fas fa-list"></i> <!-- List Icon -->
+                <i class="fas fa-list"></i>
                 Liste des Projets
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="ressource?action=new">
-                <i class="fas fa-tools"></i> <!-- Tools Icon -->
+                <i class="fas fa-tools"></i>
                 Ajouter Ressource
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="ressource?action=afficher">
-                <i class="fas fa-th-list"></i> <!-- List Icon -->
+                <i class="fas fa-th-list"></i>
                 Liste des Ressources
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-tasks"></i> <!-- Tasks Icon -->
+                <i class="fas fa-tasks"></i>
                 Ajouter Tâche
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-eye"></i> <!-- Eye Icon -->
+                <i class="fas fa-eye"></i>
                 Afficher les Tâches
             </a>
         </li>

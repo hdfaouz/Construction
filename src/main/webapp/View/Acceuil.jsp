@@ -68,7 +68,7 @@
   </style>
 </head>
 <body>
-<!-- Navigation -->
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">XpertConstruction</a>
@@ -84,10 +84,10 @@
           <a class="nav-link" href="#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#propos">A propos</a>
+          <a class="nav-link" href="#propos"> Projet </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Login.jsp" id="loginNav">Login</a>
+          <a class="nav-link" href="/View/Login.jsp" id="loginNav">Login</a>
         </li>
       </ul>
     </div>
@@ -139,33 +139,8 @@
             <div class="service-icon mb-4">
               <i class="fas fa-tools"></i>
             </div>
-            <h3 class="card-title h4">Rénovation</h3>
-            <p class="card-text">Transformez votre espace existant avec nos services de rénovation de qualité supérieure.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section class="py-5 bg-light" id="propos">
-  <div class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-      </div>
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <h2 class="section-heading">À propos de XpertConstruction</h2>
-        <p>Fondee en 1998, XpertConstruction s'est batie une reputation d'excellence dans l'industrie de la construction. Notre mission est de creer des espaces qui inspirent, fonctionnent et durent.</p>
-        <p>Avec une équipe d'experts passionnés et un engagement envers la qualité, nous sommes devenus un leader de confiance dans le secteur de la construction.</p>
-        <div class="d-flex mt-4">
-          <div class="me-4">
-            <h4 class="h5">Notre Mission</h4>
-            <p>Fournir des services de construction de qualité supérieure qui dépassent les attentes de nos clients.</p>
-          </div>
-          <div>
-            <h4 class="h5">Notre Vision</h4>
-            <p>Être reconnu comme le constructeur de premier choix pour les projets de construction innovants et durables.</p>
+            <h3 class="card-title h4">Renovation</h3>
+            <p class="card-text">Transformez votre espace existant avec nos services de renovation de qualite superieure.</p>
           </div>
         </div>
       </div>
@@ -177,11 +152,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <p class="mb-0">&copy; 2025 XpertConstruction. Tous droits réservés.</p>
+        <p class="mb-0">&copy; 2025 XpertConstruction. Tous droits reserves.</p>
       </div>
       <div class="col-md-6 text-md-end">
-        <a href="#" class="text-white-50 me-3">Politique de confidentialité</a>
-        <a href="#" class="text-white-50">Mentions légales</a>
+        <a href="#" class="text-white-50 me-3">Politique de confidentialite</a>
+        <a href="#" class="text-white-50">Mentions legales</a>
       </div>
     </div>
   </div>
