@@ -9,9 +9,10 @@ import java.util.List;
 
 public class TacheDAO {
     private Connection connection;
+
     public TacheDAO() throws SQLException, ClassNotFoundException {
         this.connection = ConnectionDB.getConnection();
     }
 
 
-}
+    }

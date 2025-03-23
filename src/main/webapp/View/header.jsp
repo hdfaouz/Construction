@@ -55,7 +55,7 @@
     <a class="navbar-brand" href="#">XpertConstruction</a>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="Acceuil.jsp">
                 <i class="fas fa-home"></i>
                 Accueil
             </a>
@@ -85,7 +85,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="tache?action=new">
                 <i class="fas fa-tasks"></i>
                 Ajouter Tâche
             </a>

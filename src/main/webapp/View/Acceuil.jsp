@@ -84,7 +84,7 @@
           <a class="nav-link" href="#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#propos"> Projet </a>
+          <a class="nav-link" href="projet?action=new"> Projet </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/View/Login.jsp" id="loginNav">Login</a>

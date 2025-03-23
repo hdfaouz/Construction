@@ -37,6 +37,9 @@ public class Projets {
     public Projets() {
     }
 
+    public Projets(int id, String nomdutache, Date datededebut, Date datefin, String description, String ressourcenecessaire, int idProjet) {
+    }
+
 
     public int getId() {
         return id;

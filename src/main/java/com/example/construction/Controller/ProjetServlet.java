@@ -67,7 +67,7 @@ public class ProjetServlet extends HttpServlet {
         }
     }
 
-    private void afficherProjetById(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+    private void afficherProjetById(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException, ClassNotFoundException {
         int id = Integer.parseInt(request.getParameter("id"));
         Projets projetsById = projetDAO.getProjetById(id);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -83,20 +83,20 @@ public class ProjetServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void afficherProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+    private void afficherProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException, ClassNotFoundException {
         List<Projets> listeProjets = projetDAO.afficherProjets();
         request.setAttribute("projets", listeProjets);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/View/Projet/afficher-projet.jsp");
         dispatcher.forward(request, response);
     }
 
-    private void supprimerProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+    private void supprimerProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ClassNotFoundException {
         int id = Integer.parseInt(request.getParameter("id"));
         projetDAO.supprimerProjets(id);
         response.sendRedirect("projet?action=afficher");
     }
 
-    private void modifierProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+    private void modifierProjet(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ClassNotFoundException {
         int id = Integer.parseInt(request.getParameter("id"));
         String nomduprojet = request.getParameter("nomduprojet");
         Date datededebut = Date.valueOf(request.getParameter("datededebut"));

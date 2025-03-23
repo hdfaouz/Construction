@@ -4,63 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un Projet</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <style>
-        body {
-            background: url(assets/images/construction-statistics-2020.webp);
-        }
         .card {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 800px;
         }
         .card-header {
-            border-radius: 10px 10px 0 0; /* Rounded corners for the header */
+            border-radius: 10px 10px 0 0;
         }
         .form-control {
-            border-radius: 5px; /* Rounded corners for input fields */
-            border: 1px solid #ced4da; /* Light border */
+            border-radius: 5px;
+            border: 1px solid #ced4da;
         }
         .form-control:focus {
-            border-color: #007bff; /* Blue border on focus */
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
         .btn-primary {
-            background-color: #007bff; /* Bootstrap primary color */
+            background-color: #007bff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
         }
         .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
         }
         .btn-secondary {
-            background-color: #6c757d; /* Bootstrap secondary color */
+            background-color: #6c757d;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
         }
         .btn-secondary:hover {
-            background-color: #5a6268; /* Darker gray on hover */
+            background-color: #5a6268;
         }
         .form-label {
-            font-weight: 500; /* Bold labels */
-            color: #495057; /* Dark gray text */
+            font-weight: 500;
+            color: #495057;
         }
         .card-body {
-            padding: 2rem; /* More padding inside the card */
+            padding: 2rem;
         }
-
         body {
             display: flex;
         }
-
         #sidebar_section {
             width: 240px;
             height: auto;
+        }
+        .error {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
         }
     </style>
 </head>
@@ -77,7 +75,7 @@
                         <h3 class="mb-0">Ajouter un Nouveau Projet</h3>
                     </div>
                     <div class="card-body">
-                        <form action="projet" method="post">
+                        <form action="projet" method="post" id="projectForm">
                             <input type="hidden" name="action" value="ajouter">
 
                             <div class="mb-3">
@@ -93,6 +91,7 @@
                             <div class="mb-3">
                                 <label for="datefin" class="form-label">Date de Fin</label>
                                 <input type="date" class="form-control" id="datefin" name="datefin" required>
+                                <div id="dateError" class="error"></div>
                             </div>
 
                             <div class="mb-3">
@@ -117,5 +116,19 @@
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+        const startDate = new Date(document.getElementById('datededebut').value);
+        const endDate = new Date(document.getElementById('datefin').value);
+        const dateError = document.getElementById('dateError');
+
+        if (endDate < startDate) {
+            e.preventDefault();
+            dateError.textContent = "La date de fin doit être postérieure à la date de début.";
+        } else {
+            dateError.textContent = "";
+        }
+    });
+</script>
 </body>
 </html>

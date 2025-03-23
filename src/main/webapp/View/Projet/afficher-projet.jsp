@@ -14,14 +14,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des Projets</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+
     <style>
-        body {
-            background: url(assets/images/construction-statistics-2020.webp);
-            display: flex;
-        }
+
 
         #sidebar_section {
             width: 240px;
@@ -36,42 +33,42 @@
         .card {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            background-color: #fff; /* White background for the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
             padding: 20px;
         }
 
         .btn-primary {
-            background-color: #007bff; /* Bootstrap primary color */
+            background-color: #007bff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
         }
 
         .btn-danger {
-            background-color: #dc3545; /* Bootstrap danger color */
+            background-color: #dc3545;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
         }
 
         .btn-danger:hover {
-            background-color: #c82333; /* Darker red on hover */
+            background-color: #c82333;
         }
 
         .btn-info {
-            background-color: #17a2b8; /* Bootstrap info color */
+            background-color: #17a2b8;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
         }
 
         .btn-info:hover {
-            background-color: #138496; /* Darker teal on hover */
+            background-color: #138496;
         }
 
         .table {
@@ -84,16 +81,16 @@
         .table td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #ddd; /* Light border between rows */
+            border-bottom: 1px solid #ddd;
         }
 
         .table th {
-            background-color: #007bff; /* Blue header */
-            color: #fff; /* White text */
+            background-color: #007bff;
+            color: #fff;
         }
 
         .table tr:hover {
-            background-color: #f1f1f1; /* Light gray on hover */
+            background-color: #f1f1f1;
         }
 
         .alert {
@@ -103,8 +100,8 @@
         }
 
         .alert-info {
-            background-color: #d1ecf1; /* Light blue for info alerts */
-            color: #0c5460; /* Dark blue text */
+            background-color: #d1ecf1;
+            color: #0c5460;
         }
     </style>
 </head>
