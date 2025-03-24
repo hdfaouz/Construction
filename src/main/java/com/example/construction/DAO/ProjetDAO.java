@@ -68,22 +68,25 @@ public class ProjetDAO {
         }
     }
 
-    public Projets getProjetById(int id) throws SQLException, ClassNotFoundException {
-        String query = "SELECT * FROM projets WHERE id=?";
-        try (Connection conn = ConnectionDB.getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+    public Projets getProjetById(int id) throws SQLException {
+        String sql = "SELECT * FROM projets WHERE id = ?";
+        try (Connection connection = ConnectionDB.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, id);
-            try (ResultSet rs = preparedStatement.executeQuery()) {
-                if (rs.next()) {
-                    return new Projets(
-                            rs.getInt("id"),
-                            rs.getString("nomduprojet"),
-                            rs.getDate("datededebut"),
-                            rs.getDate("datedefin"),
-                            rs.getString("description"),
-                            rs.getDouble("budget"));
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Projets projet = new Projets();
+                    projet.setId(resultSet.getInt("id"));
+                    projet.setNomduprojet(resultSet.getString("nomduprojet"));
+                    projet.setDatededebut(resultSet.getDate("datededebut"));
+                    projet.setDatedefin(resultSet.getDate("datedefin"));
+                    projet.setDescription(resultSet.getString("description"));
+                    projet.setBudget(resultSet.getDouble("budget"));
+                    return projet;
                 }
             }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }

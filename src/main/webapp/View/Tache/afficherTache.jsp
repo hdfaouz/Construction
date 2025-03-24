@@ -1,49 +1,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="com.example.construction.Model.Tache" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
   <title>Liste des Tâches</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .container { max-width: 1000px; margin-top: 50px; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container mt-4">
   <h2>Liste des Tâches</h2>
-  <a href="tache?action=new" class="btn btn-primary mb-3">Ajouter une Tâche</a>
-  <table class="table table-bordered">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>ID</th>
-      <th>Projet ID</th>
       <th>Nom</th>
       <th>Date Début</th>
       <th>Date Fin</th>
-      <th>Description</th>
+      <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="tache" items="${listeTaches}">
-      <tr>
-        <td>${tache.id}</td>
-        <td>${tache.projet_id}</td>
-        <td>${tache.nomdutache}</td>
-        <td>${tache.dateDebut}</td>
-        <td>${tache.dateFin}</td>
-        <td>${tache.description}</td>
-      </tr>
-    </c:forEach>
-    <c:if test="${empty listeTaches}">
-      <tr>
-        <td colspan="6" class="text-center">Aucune tâche disponible.</td>
-      </tr>
-    </c:if>
+    <%
+      List<Tache> listeTaches = (List<Tache>) request.getAttribute("listeTaches");
+      if (listeTaches != null) {
+        for (Tache tache : listeTaches) {
+    %>
+    <tr>
+      <td><%= tache.getId() %></td>
+      <td><%= tache.getNomdutache() %></td>
+      <td><%= tache.getDateDebut() %></td>
+      <td><%= tache.getDateFin() %></td>
+      <td>
+        <a href="tache?action=afficherById&id=<%= tache.getId() %>" class="btn btn-info btn-sm">Voir</a>
+        <a href="tache?action=modifier&id=<%= tache.getId() %>" class="btn btn-warning btn-sm">Modifier</a>
+        <a href="tache?action=supprimer&id=<%= tache.getId() %>" class="btn btn-danger btn-sm">Supprimer</a>
+      </td>
+    </tr>
+    <%
+        }
+      }
+    %>
     </tbody>
   </table>
+  <a href="tache?action=new" class="btn btn-success">Ajouter une tâche</a>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
