@@ -37,7 +37,7 @@ public class RessourceServlet extends HttpServlet {
         String action = req.getParameter("action");
 
         if (action == null || action.isEmpty()) {
-            resp.sendRedirect("/projet?action=afficher");
+            resp.sendRedirect("/ressource?action=afficher");
             return;
         }
         switch (action) {
@@ -106,7 +106,7 @@ public class RessourceServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         Ressource ressource = ressoureDAO.getRessourceById(id);
         req.setAttribute("ressource", ressource);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/View/Ressource/modifierRessource.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/View/Ressource/modifierRessource.jsp");
         dispatcher.forward(req, resp);
 
     }
@@ -127,6 +127,7 @@ public class RessourceServlet extends HttpServlet {
         ressoureDAO.modifierRessource(ressource);
         resp.sendRedirect("ressource?action=afficher");
     }
+
 
     private void AjouterRssource(HttpServletResponse resp, HttpServletRequest req) throws SQLException, ClassNotFoundException, IOException {
         String nom = req.getParameter("nom");

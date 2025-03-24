@@ -101,7 +101,7 @@
     <p class="lead mb-5">Specialistes en construction residentielle et commerciale depuis plus de 25 ans</p>
     <div class="d-flex justify-content-center">
       <a href="#contact" class="btn btn-custom me-3">Demandez un devis</a>
-      <a href="#projets" class="btn btn-outline-light">Voir nos projets</a>
+      <a href="#projet?action=afficher" class="btn btn-outline-light">Voir nos projets</a>
     </div>
   </div>
 </section>

@@ -27,11 +27,13 @@ public class RessoureDAO {
     }
 
     public void modifierRessource(Ressource ressource) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE ressources SET quantite=? WHERE id=?";
+        String sql = "UPDATE ressources SET nom=? , type=? , quantite=? WHERE id=?";
         Connection connection = ConnectionDB.getConnection();
         PreparedStatement preparedStatement=connection.prepareStatement(sql);
-        preparedStatement.setInt(1, ressource.getQuantite());
-        preparedStatement.setInt(2, ressource.getId());
+        preparedStatement.setString(1, ressource.getNom());
+        preparedStatement.setString(2, ressource.getType());
+        preparedStatement.setInt(3, ressource.getQuantite());
+        preparedStatement.setInt(4, ressource.getId());
         preparedStatement.executeUpdate();
     }
 
