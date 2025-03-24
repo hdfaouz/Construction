@@ -48,8 +48,13 @@
         .card-body {
             padding: 2rem;
         }
-        body {
+        .bodyElement {
             display: flex;
+            background-image: url("../Image/pexels-jacobyclarkephoto-1579356.jpg") ;
+            background-size: cover;
+            background-position: center ;
+            background-repeat: no-repeat;
+
         }
         #sidebar_section {
             width: 240px;
@@ -62,7 +67,9 @@
         }
     </style>
 </head>
-<body>
+<body class=" bodyElement">
+
+
 <section id="sidebar_section">
     <jsp:include page="../header.jsp" />
 </section>

@@ -6,17 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectionDB {
-    private static boolean tablesInitialized = false;
-
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/construction", "root", "");
-
-        // Initialize tables only once
-        if (!tablesInitialized) {
-            initializeTables(connection);
-            tablesInitialized = true;
-        }
+        Statement stm = connection.createStatement();
 
         return connection;
     }
