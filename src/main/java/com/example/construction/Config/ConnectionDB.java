@@ -28,11 +28,11 @@ public class ConnectionDB {
 
         String tachestable = "CREATE TABLE IF NOT EXISTS taches ("
                 + "id INTEGER PRIMARY KEY AUTO_INCREMENT,"
+                + "projet_id INTEGER,"
                 + "nomdutache VARCHAR(255) NOT NULL,"
                 + "datededebut DATE NOT NULL,"
                 + "datedefin DATE NOT NULL,"
                 + "description VARCHAR(255),"
-                + "projet_id INTEGER,"
                 + "FOREIGN KEY (projet_id) REFERENCES projets(id) ON DELETE CASCADE)";
         stm.executeUpdate(tachestable);
 

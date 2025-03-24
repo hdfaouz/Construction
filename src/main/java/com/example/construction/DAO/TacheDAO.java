@@ -12,24 +12,14 @@ import java.util.List;
 
 public class TacheDAO {
 
-        private Connection connection;
+    private Connection connection;
+    public TacheDAO() throws SQLException, ClassNotFoundException {
+        this.connection = ConnectionDB.getConnection();
+    }
 
-        public void tacheDAO() throws SQLException, ClassNotFoundException {
-            try {
-                this.connection = ConnectionDB.getConnection();
-                if (this.connection == null) {
-                    throw new SQLException("La connexion à la base de données est null.");
-                }
-            } catch (SQLException | ClassNotFoundException e) {
-                System.err.println("Erreur lors de l'initialisation de TacheDAO : " + e.getMessage());
-                throw new RuntimeException("Impossible d'initialiser la connexion à la base de données", e);
-            }
-        }
+
 
         public void AjouterTache(Tache tache) throws SQLException {
-            if (connection == null || connection.isClosed()) {
-                throw new SQLException("La connexion à la base de données est null ou fermée.");
-            }
             String sql = "INSERT INTO taches (projet_id, nomdutache, datededebut, datedefin, description) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setInt(1, tache.getProjet_id());
@@ -42,9 +32,6 @@ public class TacheDAO {
         }
 
         public List<Tache> getAllTaches() throws SQLException {
-            if (connection == null || connection.isClosed()) {
-                throw new SQLException("La connexion à la base de données est null ou fermée.");
-            }
             List<Tache> taches = new ArrayList<>();
             String sql = "SELECT * FROM taches";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql);

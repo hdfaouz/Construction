@@ -20,7 +20,13 @@ public class TacheServlet extends HttpServlet {
 
         @Override
         public void init() {
-            tacheDAO = new TacheDAO();
+            try {
+                tacheDAO = new TacheDAO();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         @Override
@@ -35,18 +41,22 @@ public class TacheServlet extends HttpServlet {
                     showNewForm(req, resp);
                     break;
                 case "ajouter":
+
                     try {
                         ajouterTache(req, resp);
                     } catch (SQLException e) {
-                        throw new ServletException("Erreur lors de l'ajout de la tâche", e);
+                        throw new RuntimeException(e);
                     }
+
                     break;
                 case "afficher":
+
                     try {
                         afficherTaches(req, resp);
                     } catch (SQLException e) {
-                        throw new ServletException("Erreur lors de l'affichage des tâches", e);
+                        throw new RuntimeException(e);
                     }
+
                     break;
                 default:
                     resp.sendRedirect("tache?action=afficher");
