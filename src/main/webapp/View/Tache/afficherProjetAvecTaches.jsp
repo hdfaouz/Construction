@@ -30,7 +30,7 @@
 
                     <h6 class="mt-3">Tâches associées:</h6>
                     <%
-                        List<Tache> taches = projet.getTaches();
+                        List<Tache> taches = projet.getTache();
                         if (taches != null && !taches.isEmpty()) {
                     %>
                     <table class="table table-sm table-striped">

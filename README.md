@@ -26,6 +26,6 @@ ConstructionXpert Services Solution est une application de gestion de projets ba
 **1-Diagramme de cas d'utilisation :**
 ![img.pnj](DiagrammeUml/diagramme%20de%20cas%20d'utilisation.png)
 **2-Diagramme de Classe :**
-![img.pnj](DiagrammeUml/DiagrammeDeClasse.png)
+![img.pnj](DiagrammeUml/diagramme%20de%20classe.png)
 **3-Diagramme de séquence :**
 ![img.png](DiagrammeUml/DiagrammeDeSéquence.png)

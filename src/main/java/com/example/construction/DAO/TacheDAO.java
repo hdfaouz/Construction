@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TacheDAO {
@@ -39,16 +40,12 @@ public class TacheDAO {
                 tache.setId(resultSet.getInt("id"));
                 tache.setProjet_id(resultSet.getInt("projet_id"));
                 tache.setNomdutache(resultSet.getString("nomdutache"));
-
-                // Handle NULL dates
                 java.sql.Date dateDebut = resultSet.getDate("datededebut");
                 if (resultSet.wasNull()) dateDebut = null;
                 tache.setDateDebut(dateDebut);
-
                 java.sql.Date dateFin = resultSet.getDate("datedefin");
                 if (resultSet.wasNull()) dateFin = null;
                 tache.setDateFin(dateFin);
-
                 tache.setDescription(resultSet.getString("description"));
                 taches.add(tache);
             }
@@ -67,15 +64,13 @@ public class TacheDAO {
                     tache.setId(resultSet.getInt("id"));
                     tache.setProjet_id(projet_id);
                     tache.setNomdutache(resultSet.getString("nomdutache"));
-
-                    // Handle NULL dates
-                    java.sql.Date dateDebut = resultSet.getDate("datededebut");
+                    Date dateDebut = resultSet.getDate("datededebut");
                     if (resultSet.wasNull()) dateDebut = null;
-                    tache.setDateDebut(dateDebut);
+                    tache.setDateDebut((java.sql.Date) dateDebut);
 
-                    java.sql.Date dateFin = resultSet.getDate("datedefin");
+                    Date dateFin = resultSet.getDate("datedefin");
                     if (resultSet.wasNull()) dateFin = null;
-                    tache.setDateFin(dateFin);
+                    tache.setDateFin((java.sql.Date) dateFin);
 
                     tache.setDescription(resultSet.getString("description"));
                     taches.add(tache);
@@ -95,11 +90,9 @@ public class TacheDAO {
                     tache.setId(resultSet.getInt("id"));
                     tache.setProjet_id(resultSet.getInt("projet_id"));
                     tache.setNomdutache(resultSet.getString("nomdutache"));
-
-                    // Handle NULL dates
-                    java.sql.Date dateDebut = resultSet.getDate("datededebut");
+                    Date dateDebut = resultSet.getDate("datededebut");
                     if (resultSet.wasNull()) dateDebut = null;
-                    tache.setDateDebut(dateDebut);
+                    tache.setDateDebut((java.sql.Date) dateDebut);
 
                     java.sql.Date dateFin = resultSet.getDate("datedefin");
                     if (resultSet.wasNull()) dateFin = null;

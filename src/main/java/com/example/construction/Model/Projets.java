@@ -1,6 +1,7 @@
 package com.example.construction.Model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Projets {
     private int id;
@@ -92,5 +93,9 @@ public class Projets {
 
     public void setBudget(Double budget) {
         this.budget = budget;
+    }
+
+    public List<Tache> getTache() {
+        return List.of();
     }
 }
