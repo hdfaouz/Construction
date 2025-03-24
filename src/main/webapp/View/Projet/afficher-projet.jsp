@@ -77,7 +77,6 @@
             border-collapse: collapse;
         }
 
-        .table th,
         .table td {
             padding: 12px;
             text-align: left;
@@ -85,8 +84,7 @@
         }
 
         .table th {
-            background-color: #007bff;
-            color: #fff;
+            background-color: black;
         }
 
         .table tr:hover {
