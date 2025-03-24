@@ -128,6 +128,7 @@
                 <th>Nom du Projet</th>
                 <th>Date de Début</th>
                 <th>Date de Fin</th>
+                <th>Description</th>
                 <th>Budget</th>
                 <th>Actions</th>
             </tr>
@@ -141,6 +142,7 @@
                 <td><%= projet.getNomduprojet() %></td>
                 <td><%= sdf.format(projet.getDatededebut()) %></td>
                 <td><%= sdf.format(projet.getDatedefin()) %></td>
+                <td><%=projet.getDescription()%></td>
                 <td><%= nf.format(projet.getBudget()) %></td>
                 <td>
                     <a href="projet?action=afficherbyID&id=<%= projet.getId() %>" class="btn btn-sm btn-info">Modifier</a>
