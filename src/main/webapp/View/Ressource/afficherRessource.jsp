@@ -86,8 +86,8 @@
                 <td><%= ressource.getType() %></td>
                 <td><%= nf.format(ressource.getQuantite()) %></td>
                 <td>
-                    <a href="ressource?action=Afficher&id=<%= ressource.getId() %>" class="btn btn-sm btn-info">Modifier</a>
-                    <a href="#" onclick="confirmDelete(<%= ressource.getId() %>)" class="btn btn-sm btn-danger">Supprimer</a>
+                    <a href="ressource?action=afficherByID&id=<%= ressource.getId() %>" class="btn btn-sm btn-info">Modifier</a>
+                    <a href="ressource?action=supprimer&id=<%= ressource.getId() %>" onclick="confirmDelete(<%= ressource.getId() %>)" class="btn btn-sm btn-danger">Supprimer</a>
                 </td>
             </tr>
             <%

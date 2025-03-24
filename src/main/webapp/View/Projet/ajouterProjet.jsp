@@ -50,11 +50,8 @@
         }
         .bodyElement {
             display: flex;
-            background-image: url("../Image/pexels-jacobyclarkephoto-1579356.jpg") ;
             background-size: cover;
             background-position: center ;
-            background-repeat: no-repeat;
-
         }
         #sidebar_section {
             width: 240px;

@@ -122,8 +122,8 @@ public class RessourceServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         String nom = req.getParameter("nom");
         String type = req.getParameter("type");
-        Integer quantite = Integer.valueOf(req.getParameter("quantite"));
-        Ressource ressource = new Ressource(nom,type,quantite);
+        int quantite = Integer.parseInt(req.getParameter("quantite"));
+        Ressource ressource = new Ressource(id,nom,type,quantite);
         ressoureDAO.modifierRessource(ressource);
         resp.sendRedirect("ressource?action=afficher");
     }
