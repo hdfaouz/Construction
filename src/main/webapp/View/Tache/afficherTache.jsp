@@ -33,7 +33,7 @@
       <td><%= tache.getDateFin() %></td>
       <td>
         <a href="tache?action=afficherById&id=<%= tache.getId() %>" class="btn btn-info btn-sm">Voir</a>
-        <a href="tache?action=modifier&id=<%= tache.getId() %>" class="btn btn-warning btn-sm">Modifier</a>
+        <a href="tache?action=editTache&id=<%= tache.getId() %>" class="btn btn-warning btn-sm">Modifier</a>
         <a href="tache?action=supprimer&id=<%= tache.getId() %>" class="btn btn-danger btn-sm">Supprimer</a>
       </td>
     </tr>

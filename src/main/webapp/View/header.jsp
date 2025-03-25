@@ -91,7 +91,7 @@ changer le désigne et les coulours <%@ page contentType="text/html;charset=UTF-
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="tache?action=afficher">
                 <i class="fas fa-eye"></i>
                 Afficher les Tâches
             </a>

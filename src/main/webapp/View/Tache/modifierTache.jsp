@@ -5,9 +5,9 @@
   Time: 15:40
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
   <title>Modifier la tâche</title>
@@ -16,7 +16,7 @@
 <body>
 <div class="container mt-5">
   <h2 class="mb-4">Modifier la tâche</h2>
-  <form action="${pageContext.request.contextPath}/tache?action=modifier" method="post">
+  <form action="${pageContext.request.contextPath}/tache?action=update" method="post">
     <input type="hidden" name="id" value="${tache.id}" />
 
     <div class="mb-3">
@@ -31,17 +31,12 @@
 
     <div class="mb-3">
       <label for="datedefin" class="form-label">Date de fin</label>
-      <input type="date" class="form-control" id="datedefin" name="datedefin" value="${tache.dateFin}" required>
+      <input type="date" class="form-control" id="datedefin" name="datefin" value="${tache.dateFin}" required>
     </div>
 
     <div class="mb-3">
       <label for="description" class="form-label">Description</label>
       <textarea class="form-control" id="description" name="description" rows="3">${tache.description}</textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="ressourcenecessaire" class="form-label">Ressources nécessaires</label>
-      <input type="text" class="form-control" id="ressourcenecessaire" name="ressourcenecessaire" value="${tache.ressourcenessaire}">
     </div>
 
     <div class="mb-3">

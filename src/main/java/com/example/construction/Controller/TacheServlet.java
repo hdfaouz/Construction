@@ -65,6 +65,13 @@ public class TacheServlet extends HttpServlet {
                 case "tacheparprojets":
                     afficherTacheParProjet(req, resp);
                     break;
+                case "editTache":
+                    editTache(req, resp);
+                    break;
+                case "update":
+                    updateTache(req, resp);
+                    break;
+
                 default:
                     resp.sendRedirect("tache?action=afficher");
                     break;
@@ -73,6 +80,34 @@ public class TacheServlet extends HttpServlet {
             throw new ServletException("Database error occurred", e);
         }
     }
+
+    public void editTache(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, SQLException
+    {
+        // get tache by id
+        int tachId = Integer.parseInt(request.getParameter("id"));
+        Tache tache = tacheDAO.getTacheById(tachId);
+        request.setAttribute("tache", tache);
+        // show input field
+        RequestDispatcher rd = request.getRequestDispatcher("/View/Tache/modifierTache.jsp");
+        rd.forward(request, response);
+
+    }
+
+    private void updateTache(HttpServletRequest req, HttpServletResponse resp)  throws SQLException, IOException {
+
+            int id = Integer.parseInt(req.getParameter("id"));
+            int projetId = Integer.parseInt(req.getParameter("projet_id"));
+            String nomTache = req.getParameter("nomdutache");
+            Date dateDebut = Date.valueOf(req.getParameter("datededebut"));
+            Date dateFin = Date.valueOf(req.getParameter("datefin"));
+            String description = req.getParameter("description");
+
+            Tache tache = new Tache(id, projetId, nomTache, dateDebut, dateFin, description);
+            tacheDAO.modifierTache(tache);
+            resp.sendRedirect("tache?action=afficher");
+    }
+
 
     private void afficherTacheParProjet(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, ServletException, IOException {

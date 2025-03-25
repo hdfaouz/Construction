@@ -30,6 +30,9 @@ public class Tache {
         this.description = description;
     }
 
+    public Tache(int projectId, String nomdutache, Date datedebut, Date datefin, String description, int id) {
+    }
+
     public int getId() {
         return id;
     }

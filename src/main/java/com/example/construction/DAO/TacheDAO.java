@@ -113,9 +113,8 @@ public class TacheDAO {
             preparedStatement.executeUpdate();
         }
     }
-
     public void modifierTache(Tache tache) throws SQLException {
-        String sql = "UPDATE taches SET projet_id=?, nomdutache=?, datededebut=?, datedefin=?, description=? WHERE id = ?";
+        String sql = "UPDATE taches SET projet_id=?, nomdutache=?, datededebut=?, datedefin=?, description=? WHERE id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, tache.getProjet_id());
             preparedStatement.setString(2, tache.getNomdutache());
@@ -126,4 +125,9 @@ public class TacheDAO {
             preparedStatement.executeUpdate();
         }
     }
-}
+
+
+    }
+
+
+
